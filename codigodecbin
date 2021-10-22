@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner scanner = new Scanner(System.in);
+    do {
+        int n;
+        System.out.println("Introduza n");
+        n = scanner.nextInt();
+        if (n <= 0) break;
+        if (n == 3) continue;
+        System.out.println(decBin(n));
+    }while(true);
+
+    }
+    static long decBin(int num){
+        long rslt=0;
+        int r,fator=1;
+        while(num>0){
+            r=num%2;
+            num=num/2;
+            rslt = r* fator + rslt;
+            fator *=10;
+        }
+        return rslt;
+    }
+}
